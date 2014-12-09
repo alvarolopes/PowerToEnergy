@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("ConvertPowerToEnergy", "Convert", FormMethod.Get))
+{
+    <h2>Power</h2>
+    @Html.TextArea("readings", new {Style = "Height:200px"})
+    <h2>Energy</h2>
+    @Html.TextArea("energyReadings", (string) ViewBag.energyReadings, new {Style = "Height:200px;"})
+    <p><input type="submit" value="Convert" /></p>
+}
